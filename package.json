@@ -1,8 +1,14 @@
 {
   "name": "hasura",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "Zachary Boyd <zachary@dailynodemodule.com>",
+  "license": "CC0-1.0",
   "private": true,
+  "description": "This project is a sample project for graphql",
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "graphql": "^14.2.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8"
@@ -21,5 +27,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dailynodemodule/graphql"
+  }
 }
