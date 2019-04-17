@@ -9,7 +9,7 @@ const NavBar = () => {
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="title" color="inherit">
-                        Contact App
+                        Holy Roman Emperors
                     </Typography>
                 </Toolbar>
             </AppBar>

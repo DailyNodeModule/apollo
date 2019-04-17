@@ -37,19 +37,41 @@ export default class API {
 
     }
 
-    async listOfPeople() {
-        debugger
-        const q = await graphql(schema, `
-            people { name, image, id }
-        `);
-
-        const x = await (await fetch(`http://localhost:8080/v1alpha1/graphql`, {
+    async request(query) {
+        return (await (await fetch(`/graphql`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(q)
-        })).json();
-        console.log(x)
+            body: JSON.stringify({ query })
+        })).json()).data;
+    } 
+
+    async emperors() {
+        return (await this.request(`
+            query {
+                emperors {
+                    name
+                    imageUrl
+                    house {
+                        name
+                    }
+                }
+            }
+        `)).emperors;
+    }
+
+    async houses() {
+        return (await this.request(`
+            query {
+                houses {
+                    name
+                    members {
+                        name,
+                        imageUrl
+                    }
+                }
+            }
+        `)).houses;
     }
 }
